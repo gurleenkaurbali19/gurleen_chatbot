@@ -79,6 +79,23 @@
         "prompt":"Experience?",
         "response":"Although I’m a fresher, I have gained strong practical experience through various hands-on trainings and self-driven projects. I completed a Data Science training at ShapeMySkills, where I learned machine learning, Python, and real-time model building. I also did a Data Analytics training at QSpiders, gaining skills in Power BI, SQL, and data visualization. Additionally, I’ve worked on several projects like article summarization using LSTM, customer sentiment analysis with Django, and a personalized AI chatbot using FAISS and Hugging Face. These experiences have helped me apply theoretical knowledge to real-world problems."
 
+    },
+    {
+      "prompt":" bye BYE",
+      "response":"Goodbye! 😊 Have a great day ahead! 👋"
+    },
+    {
+      "prompt":"Goodbye!",
+      "response":"Goodbye! 😊 Have a great day ahead! 👋"
+    },
+    {
+      "prompt":"Hello Hi",
+      "response":"Hello! How can i assist you?"
+    },
+    {
+      "prompt":"okay OKAY Okay",
+      "response":"Great! Let me know if you have any more questions or if there's anything else I can assist you with! 😊"
     }
+
   ]
   
