@@ -5,20 +5,30 @@ from dotenv import load_dotenv
 import os
 from langchain_cohere import ChatCohere
 from sentence_transformers import SentenceTransformer
+import streamlit as st
 
-# Load environment variables
+# Load environment variables (for local use)
 load_dotenv()
-api_key = os.getenv("COHERE_API_KEY")
 
-# Load your JSON data
+# loading from Streamlit secrets, else fallback to .env
+api_key = None
+try:
+    api_key = st.secrets["COHERE_API_KEY"]
+except Exception:
+    api_key = os.getenv("COHERE_API_KEY")
+
+if not api_key:
+    raise ValueError("❌ Cohere API key not found. Please set it in Streamlit Secrets or your .env file.")
+
+# Load JSON data
 with open('mydata.json', 'r', encoding='utf-8') as f:
     data = json.load(f)
 
-# Safely extract prompts and responses
+# Extract prompts and responses
 questions = [item.get('prompt', '') for item in data]
 answers = [item.get('response', '') for item in data]
 
-# Load pre-trained embedding model
+# Load embedding model
 model = SentenceTransformer('all-MiniLM-L6-v2')
 
 # Create FAISS index
@@ -36,7 +46,7 @@ def get_answer(query):
     threshold = 1.0
     relevant_answers = [answers[i] for i, dist in zip(I[0], D[0]) if dist < threshold]
 
-    # Smart + concise fallback
+    # Fallback if no relevant data
     if not relevant_answers:
         fallback_prompt = (
             f"You are Gurleen's personal chatbot. The user asked: '{query}'. "
@@ -49,7 +59,7 @@ def get_answer(query):
         response = cohere_client.invoke(fallback_prompt)
         return response.content.strip() if hasattr(response, "content") else str(response).strip()
 
-    # Normal context-based flow
+    # Normal response
     prompt = (
         f"You are Gurleen's personal chatbot. You answer questions about Gurleen, "
         f"a fresher who graduated with BCA in 2025. The user asked: '{query}'. "
