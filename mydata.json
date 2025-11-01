@@ -13,7 +13,7 @@
     },
     {
       "prompt": "What projects have you worked on?",
-      "response": "I have worked on various projects including:\n1. Article Summarization - Summarizing articles using LSTM.\n2. Diabetes Prediction Model - Predicting diabetes onset using ML.\n3. Sales Dashboard - Visualizing sales insights with Tableau.\n4. English-to-Turkish Translator - Real-time translation using Hugging Face M2M100.\n5. Sports Image Classification - Classifying athlete images using Haar Cascades.\n6. Django-Based Web Application - Building robust backend management.\n\nIf you want to know more about any specific project, just ask!"
+      "response": "I have worked on various projects including:\n1.IPCheck: a full-stack web application built with FastAPI (backend) and React (frontend) that helps detect suspicious IP addresses in server logs using a trained Random Forest Machine Learning model.\n2. Sales Dashboard - Visualizing sales insights with Tableau.\n3. English-to-Turkish Translator - Real-time translation using Hugging Face M2M100.\n4. Personal Chatbot (ME!): A personalized chatbot created using FAISS (Facebook AI Similarity Search) and the Sentence Transformers library. It allows users to chat with a bot that can answer questions related to Gurleen's projects, skills, education, and more..\n\nIf you want to know more about any specific project, just ask! You can check out more of my project here: https://github.com/gurleenkaurbali19 and on my portfolio : https://gurleenkaurbali19.github.io/gurleen_kaur_bali_portfolio/"
     },
     {
       "prompt": "Tell me about your Article Summarization project.",
@@ -37,11 +37,32 @@
     },
     {
       "prompt": "What skills do you have?",
-      "response": "I have strong skills in Python, C, C++, Machine Learning, NLP, SQL, and Computer Networks. I am also proficient in using frameworks like Django and tools like Power BI, Excel, and Tableau. My professional skills include software engineering and data analysis."
+      "response": "I have strong skills in Python, Data Analysis,NLP, SQL, Generative AI ,etc.. I am also proficient in using frameworks like Django and tools like Power BI, Excel, and Tableau. My professional skills include software engineering. Apart from these technical skills i am a team worker and good at communication , and a quick learner to leran new skills and tools"
     },
     {
       "prompt": "What certifications do you have?",
-      "response": "I hold certifications from top organizations, including:\n- Career Essentials in Generative AI by Microsoft and LinkedIn\n- Data Science Job Simulation by British Airways (Forage)\n- Software Engineering Job Simulation by J.P. Morgan (Forage)\n- Generative AI Introduction and Applications by IBM\n- Python for Machine Learning by Great Learning\n- Introduction to AWS Cloud Careers"
+      "response": "I hold certifications from top organizations, including:\n Oracle cloud Infrastructure Generative AI Professional \n- Career Essentials in Generative AI by Microsoft and LinkedIn\n- Data Science Job Simulation by British Airways (Forage)\n- Software Engineering Job Simulation by J.P. Morgan (Forage)\n\nFeel free to ask about a particular certicifation"
+    },
+    {
+      "prompt":"Tell me about your  Oracle cloud Infrastructure Generative AI Professional certification ",
+      "response":"It is a credential demonstrating expertise in building and deploying Generative AI solutions on Oracle Cloud Infrastructure.\nAlong this journey, I deepened my understanding of:\n1.Large Language Models (LLMs): Fundamentals, architectures, prompt design, fine-tuning, code models, multi-modal models, and language agents.\n2.OCI Generative AI Service: Using pretrained foundational models (Chat & Embedding), creating dedicated AI clusters, fine-tuning with custom datasets, deploying endpoints, and exploring the security architecture.\n3.Retrieval-Augmented Generation (RAG): LangChain + Oracle Database 23ai integration, chunking & embedding documents, storing & indexing embeddings, similarity search, and response generation pipelines.\n4.OCI Generative AI RAG Agents: Creating knowledge bases, deploying RAG agents, and invoking them as chatbots. "
+    },
+    {
+      "prompt":"Tell me about your Career Essentials in Generative AI by Microsoft and LinkedIn certification",
+      "response":"It is a professional certificate jointly offered by Microsoft and LinkedIn that provides foundational knowledge of Generative AI concepts, large language models, prompt engineering, responsible AI practices, and practical applications of AI tools in creativity, productivity, and real-world problem-solving."
+    },
+    {
+      "prompt":"Tell me about your Data Science Job Simulation by British Airways (Forage)",
+      "response":"It is a virtual job simulation program by British Airways on Forage, where I worked on real-world data science tasks including data cleaning, exploratory data analysis, and predictive modeling to generate business insights; I analyzed customer booking data, identified factors influencing loyalty, and presented actionable recommendations using Python and visualization techniques."
+    },
+    {
+      "prompt":"Tell me about your Software Engineering Job Simulation by J.P. Morgan (Forage) ",
+      "response":"It is a virtual job simulation by J.P. Morgan on Forage that provided hands-on experience with real-world software engineering tasks, including setting up a local development environment, fixing code errors, implementing data visualization features for financial data using Python and React, and understanding how technology solutions support financial analysis within the firm."
+    },
+    {
+      "prompt":"Tell me about your Generative AI Introduction and Applications by IBM",
+      "response": "It is a professional course by IBM that introduces the fundamentals of Generative AI, covering topics like large language models, diffusion models, and transformer architectures; it also explores key applications such as text generation, image synthesis, and conversational AI, along with the ethical and responsible use of generative technologies in real-world scenarios."
+
     },
     {
       "prompt": "Tell me about your education.",
@@ -53,7 +74,7 @@
     },
     {
       "prompt": "Where can I view your portfolio?",
-      "response": "My portfolio is available at: https://gorgeous-cardboard-907.notion.site/GURLEEN-KAUR-BALI-PORTFOLIO-180582e22306808fb849e262f8ab96dc."
+      "response": "My portfolio is available at: https://gurleenkaurbali19.github.io/gurleen_kaur_bali_portfolio/"
     },
     {
       "prompt": "What is your LinkedIn profile link?",
@@ -95,6 +116,14 @@
     {
       "prompt":"okay OKAY Okay",
       "response":"Great! Let me know if you have any more questions or if there's anything else I can assist you with! 😊"
+    },
+    {
+      "prompt":"Tell me about your IP check project?",
+      "response":"IPCheck is a full-stack web application built with FastAPI (backend) and React (frontend) that helps detect suspicious IP addresses in server logs using a trained Random Forest Machine Learning model. It allows users to upload a server log in CSV format and get an AI-powered analysis along with a visual map display of flagged IPs. You can check out the live project here: https://ipcheck-nine.vercel.app/"
+    },
+    {
+      "prompt":"What type of roles are you looking for?",
+      "response":"I am looking for roles which involves working with data , data analysis , AI based roles , Python Programming based roles, Roles which require tools like excel , tableau, SQL , etc., apart from this i continue to upskill myself and learn new tools and skills. "
     }
 
   ]

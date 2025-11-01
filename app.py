@@ -15,7 +15,7 @@ suggested_questions = [
 # Page config
 st.set_page_config(page_title="Gurleen's Chatbot", page_icon="💬")
 
-# Modern CSS styling
+# Modern UI Styling
 st.markdown("""
     <style>
         body {
@@ -27,48 +27,67 @@ st.markdown("""
             padding: 20px;
             border-radius: 12px;
         }
-        .stChatMessage {
-            padding: 14px;
-            border-radius: 12px;
-            margin-bottom: 12px;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-        }
+
+        /* Chat bubbles */
         .stChatMessage.user {
-            background-color: #e1f5fe;
+            background-color: #d9fdd3; /* soft green */
+            color: #111;
+            border: 1px solid #b3e6a1;
+            border-radius: 12px;
+            padding: 12px 14px;
+            margin: 6px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
         .stChatMessage.assistant {
-            background-color: #f0f0f0;
+            background-color: #f2f2f2; /* soft gray */
+            color: #000;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            padding: 12px 14px;
+            margin: 6px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
+
+        /* Input styling */
         .stTextInput>div>div>input {
             border-radius: 12px;
             padding: 10px;
             border: 1px solid #00796b;
         }
+
+        /* Button styling */
         .stButton>button {
-            background-color: #00796b;
+            background: linear-gradient(90deg, #00796b, #009688);
             color: white;
-            border-radius: 8px;
+            border-radius: 20px;
             font-weight: 600;
-            padding: 8px 16px;
+            font-size: 0.9rem;
+            padding: 8px 18px;
             margin: 5px 5px 10px 0;
             transition: 0.3s ease;
             border: none;
         }
         .stButton>button:hover {
-            background-color: #004d40;
+            background: linear-gradient(90deg, #004d40, #00695c);
         }
+
+        /* Intro */
         .intro {
             text-align: center;
             font-size: 1.1em;
             color: #444;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
+
+        /* Chat container */
         .chat-container {
             max-height: 500px;
             overflow-y: auto;
             padding-right: 10px;
             margin-bottom: 20px;
         }
+
+        /* Typing animation */
         .typing-indicator {
             font-style: italic;
             color: #888;
@@ -83,7 +102,10 @@ st.markdown("""
 
 # Title and intro
 st.title("💬 Gurleen's Personal Chatbot")
-st.markdown('<div class="intro">👋 Ask me anything about <strong>Gurleen</strong> — her projects, education, skills, certifications and more.</div>', unsafe_allow_html=True)
+st.markdown(
+    '<div class="intro">👋 Ask me anything about <strong>Gurleen</strong> — her projects, education, skills, certifications and more.</div>',
+    unsafe_allow_html=True
+)
 
 # Initialize chat history
 if "messages" not in st.session_state:
@@ -92,37 +114,31 @@ if "messages" not in st.session_state:
         "content": "Hi! I'm Gurleen's assistant. You can ask me anything about her projects, skills, education, or trainings! 😊"
     }]
 
-# Suggested Questions Section
+# Suggested Questions
 st.markdown("#### 💡 Quick Questions")
 cols = st.columns(2)
 for i, question in enumerate(suggested_questions):
     if cols[i % 2].button(question, key=f"suggested_{i}"):
-
-        # Append user query and display immediately
         st.session_state.messages.append({"role": "user", "content": question})
-        st.session_state.messages.append({"role": "assistant", "content": "🤖 " + get_answer(question)})
+        response = get_answer(question)
+        st.session_state.messages.append({"role": "assistant", "content": "🤖 " + response})
         st.rerun()
 
-
-# Scrollable chat history
+# Chat History Section
 st.markdown('<div class="chat-container">', unsafe_allow_html=True)
 for msg in st.session_state.messages:
-    with st.chat_message(msg["role"]):
+    avatar = "🧑‍💻" if msg["role"] == "user" else "🤖"
+    with st.chat_message(msg["role"], avatar=avatar):
         st.markdown(msg["content"])
 st.markdown('</div>', unsafe_allow_html=True)
 
-# Chat input
+# Chat Input
 prompt = st.chat_input("Type your question about Gurleen here...")
 
 if prompt:
-    # Add the user message immediately to chat history
     st.session_state.messages.append({"role": "user", "content": prompt})
-
-    # Generate and display the assistant's response
-    with st.chat_message("assistant"):
+    with st.chat_message("assistant", avatar="🤖"):
         with st.spinner("Typing..."):
             response = get_answer(prompt)
-        response = "🤖 " + response
-        st.session_state.messages.append({"role": "assistant", "content": response})
-
+        st.session_state.messages.append({"role": "assistant", "content":response})
     st.rerun()
